@@ -1,12 +1,14 @@
 import { redirect } from "next/navigation";
-import { UserButton, auth } from "@clerk/nextjs";
+import { UserButton, auth, currentUser } from "@clerk/nextjs";
 import { prisma } from "@/lib/prismadb";
 import StoreSwitcher from "@/components/StoreSwitcher";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Links from "@/components/layout/sidebar/Links";
 import { Separator } from "@/components/ui/separator";
+import User from "@/components/User";
 
 const Sidebar = async () => {
+  const user = await currentUser();
   const { userId } = auth();
 
   if (!userId) {
@@ -28,11 +30,10 @@ const Sidebar = async () => {
 
       <div className="px-5">
         <Separator />
-        <div className="flex justify-between items-center mt-4">
-          <UserButton afterSignOutUrl="/" />
-          <ThemeToggle />
-        </div>
+        <div className="flex justify-between items-center mt-4"></div>
       </div>
+
+      <User user={user} />
     </nav>
   );
 };
