@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
-import Navbar from "@/components/layout/navbar";
+import Sidebar from "@/components/layout/sidebar";
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -21,7 +21,7 @@ export default async function DashboardLayout({
   }
   return (
     <div>
-      <Navbar />
+      <Sidebar />
       {children}
     </div>
   );
