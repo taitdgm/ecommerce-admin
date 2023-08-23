@@ -20,7 +20,7 @@ export default async function DashboardLayout({
     redirect("/sign-in");
   }
   return (
-    <div>
+    <div className="flex">
       <Sidebar />
       {children}
     </div>

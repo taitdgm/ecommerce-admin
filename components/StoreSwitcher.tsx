@@ -22,7 +22,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { useCreateStoreModal } from "@/hooks/useCreateStoreModal";
-import { getAvatarFallback } from "@/helpers";
+import { getAvatarFallback } from "@/helpers/utils";
 
 interface StoreSwitcherProps {
   stores: Store[];
