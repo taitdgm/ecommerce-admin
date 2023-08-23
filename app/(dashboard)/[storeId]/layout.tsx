@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/navbar";
 
 interface DashboardLayoutProps {
   children: ReactNode;
